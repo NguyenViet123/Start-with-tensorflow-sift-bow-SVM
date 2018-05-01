@@ -129,7 +129,7 @@ with tf.Session() as sess:
         if labels_predict[i] != labels_test_final[i]:
             count += 1.0
     print(count, '===', labels_predict.shape[0])
-    print(100.0 - count / labels_predict.shape[0])
+    print(100.0 - 100 * count / labels_predict.shape[0])
 
 print('W = ', W_out.T, '\n=======\n', 'b = ', b_out)
 
