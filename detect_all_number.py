@@ -100,7 +100,8 @@ model_output = tf.add(tf.matmul(x_data, W), b)
 l2_norm = tf.norm(W)
 # print(np.array([tf.reduce_sum(tf.multiply(x_data, tf.gather(tf.transpose(W), y_target)), axis=1)]).T.shape)
 
-hinge = tf.reduce_sum(tf.maximum(0., 1. - tf.reduce_sum(tf.multiply(x_data, tf.gather(tf.transpose(W), y_target)), axis=1, keepdims=True) + tf.matmul(x_data, W) ))
+hinge = tf.reduce_sum(tf.maximum(0., 1. - tf.reduce_sum(tf.multiply(x_data, tf.gather(tf.transpose(W), y_target)), axis=1, keepdims=True)
+                                 + tf.matmul(x_data, W)))
 
 loss = hinge + l2_norm
 
